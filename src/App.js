@@ -1,22 +1,52 @@
-import logo from "./logo.svg";
+import { useEffect, useState } from "react";
 import "./App.css";
+import Word from "./components/Word";
+import WrongWordPool from "./components/WrongWordPool";
 
 function App() {
+  const [answer, setAnswer] = useState("TIKTOKBOOTCAMP");
+  const [correctChars, setCorrectChars] = useState([]);
+  const [wrongChars, setWrongChars] = useState([]);
+
+  const handleKeyPress = (e) => {
+    // handles user key input
+    const key = e.key.toUpperCase();
+    const regex = /^[A-Za-z]+$/; //condition for alphabets only
+
+    if (!regex.test(key) || key === "ENTER") {
+      // Ensures that the keys are only alphabets
+      return;
+    }
+
+    if (answer.includes(key) && !correctChars.includes(key)) {
+      setCorrectChars([...correctChars, key]);
+      return;
+    }
+
+    if (!answer.includes(key) && !wrongChars.includes(key)) {
+      setWrongChars([...wrongChars, key]);
+      return;
+    }
+  };
+
+  useEffect(() => {
+    // Listens for user key input
+    document.addEventListener("keypress", handleKeyPress, true);
+
+    return () => {
+      // Removes event listener to prevent memory leak
+      document.removeEventListener("keypress", handleKeyPress, true);
+    };
+  }, [answer, correctChars, wrongChars]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <br />
+        <Word data={answer} correctChars={correctChars} />
+        <br />
+        <WrongWordPool data={wrongChars} />
       </header>
     </div>
   );
