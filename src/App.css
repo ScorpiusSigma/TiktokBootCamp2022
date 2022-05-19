@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
   font-family: "Quicksand";
@@ -19,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 30px 20px 20px;
 }
 
 .App-link {
@@ -31,3 +36,9 @@
   stroke-width: 4px;
   stroke-linecap: round;
 }
+
+.navigation {
+  list-style: none inside;
+  color: white;
+  padding: 30px 0px 0px 0px;
+} 
