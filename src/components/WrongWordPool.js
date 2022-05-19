@@ -1,4 +1,4 @@
-export default function WrongWordPool(props) {
+function WrongWordPool(props) {
   const { data } = props;
 
   return (
@@ -14,3 +14,5 @@ export default function WrongWordPool(props) {
     </div>
   );
 }
+
+export default WrongWordPool;

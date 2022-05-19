@@ -1,4 +1,4 @@
-export default function Word(props) {
+function Word(props) {
   const { data, correctChars } = props;
 
   const splitWords = (word) => {
@@ -20,3 +20,5 @@ export default function Word(props) {
     </div>
   );
 }
+
+export default Word;

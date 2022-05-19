@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Figure from "./components/Figure";
 import Word from "./components/Word";
 import WrongWordPool from "./components/WrongWordPool";
 
@@ -42,7 +43,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <h1 className="text-3xl font-bold">Guess the Word</h1>
+        <br />
+        <Figure wrongChars={wrongChars}/>
         <br />
         <Word data={answer} correctChars={correctChars} />
         <br />
