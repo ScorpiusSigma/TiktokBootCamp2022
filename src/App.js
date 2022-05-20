@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Figure from "./components/Figure";
+import Popup from "./components/Popup";
 import Word from "./components/Word";
 import WrongWordPool from "./components/WrongWordPool";
+
 
 function App() {
   const [answer, setAnswer] = useState("TIKTOKBOOTCAMP");
   const [correctChars, setCorrectChars] = useState([]);
   const [wrongChars, setWrongChars] = useState([]);
+  const [playable, setPlayable] = useState(true);
 
   const handleKeyPress = (e) => {
     // handles user key input
@@ -19,6 +22,7 @@ function App() {
       return;
     }
 
+    // appending the correct letter onto the correctChars array
     if (answer.includes(key) && !correctChars.includes(key)) {
       setCorrectChars([...correctChars, key]);
       return;
@@ -29,6 +33,14 @@ function App() {
       return;
     }
   };
+
+  const replay = () => {
+    setCorrectChars([]);
+    setWrongChars([]);
+    
+    const newWord = "SHREK";
+    setAnswer(newWord);
+  }
 
   useEffect(() => {
     // Listens for user key input
@@ -41,17 +53,25 @@ function App() {
   }, [answer, correctChars, wrongChars]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="text-3xl font-bold">Guess the Word</h1>
-        <br />
-        <Figure wrongChars={wrongChars}/>
-        <br />
-        <Word data={answer} correctChars={correctChars} />
-        <br />
-        <WrongWordPool data={wrongChars} />
-      </header>
-    </div>
+    <>
+      <div className="App App-header">
+        <h1 className="text-6xl font-bold">Guess the Word</h1>
+      </div> 
+      <div className="Game ">
+          <Figure wrongChars={wrongChars}/>
+          <br />
+          <Word data={answer} correctChars={correctChars} />
+          <br />
+          <WrongWordPool data={wrongChars} />
+      </div>
+      <Popup
+        correctChars={correctChars}
+        wrongChars={wrongChars}
+        answer={answer}
+        setPlayable={setPlayable}
+        replay={replay}
+      />
+    </>
   );
 }
 
