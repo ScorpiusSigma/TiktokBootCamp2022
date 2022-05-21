@@ -37,10 +37,10 @@ function Player() {
   const replay = () => {
     setCorrectChars([]);
     setWrongChars([]);
-    
+
     const newWord = "SHREK";
     setAnswer(newWord);
-  }
+  };
 
   useEffect(() => {
     // Listens for user key input
@@ -53,19 +53,19 @@ function Player() {
   }, [answer, correctChars, wrongChars]);
 
   return (
-    <>
+    <div className="game-container">
       <Navigation />
       <div className="App App-header">
         <h1 className="text-4xl font-bold">Player</h1>
         <br />
-        <h1 className="text-6xl font-bold">Guess the Word</h1>
-      </div> 
-      <div className="Game ">
-          <Figure wrongChars={wrongChars}/>
-          <br />
-          <Word data={answer} correctChars={correctChars} />
-          <br />
-          <WrongWordPool data={wrongChars} />
+        <h1 className="text-3xl md:text-6xl font-bold">Guess the Word</h1>
+      </div>
+      <div className="game">
+        <Figure wrongChars={wrongChars} />
+        <br />
+        <Word data={answer} correctChars={correctChars} />
+        <br />
+        <WrongWordPool data={wrongChars} />
       </div>
       <Popup
         correctChars={correctChars}
@@ -74,7 +74,7 @@ function Player() {
         setPlayable={setPlayable}
         replay={replay}
       />
-    </>
+    </div>
   );
 }
 
