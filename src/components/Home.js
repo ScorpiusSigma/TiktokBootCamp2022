@@ -23,7 +23,7 @@ function Home() {
       </div>
       <br />
       <div>
-        <Link to="/player-screen">
+        <Link to="/bot-screen">
           <button id="home">Bot</button>
         </Link>
       </div>
