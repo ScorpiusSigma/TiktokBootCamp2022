@@ -1,7 +1,9 @@
 import "./App.css";
+
 import HomeScreen from "./components/Home";
 import PlayerScreen from "./components/Player";
 import BotScreen from "./components/Bot";
+
 import {BrowserRouter, Route, Router, Routes} from "react-router-dom";
 
 function App() {

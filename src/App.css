@@ -23,6 +23,10 @@ button#home {
   height: 50px;
 }
 
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
   font-family: "Quicksand";
@@ -42,6 +46,7 @@ button#home {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 30px 20px 20px;
 }
 
 .home {
