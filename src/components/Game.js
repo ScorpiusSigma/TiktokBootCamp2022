@@ -5,6 +5,7 @@ import Popup from "./Popup";
 import Word from "./Word";
 import WrongWordPool from "./WrongWordPool";
 import Navigation from "./Navigation";
+import Keypad from "./Keypad";
 
 function Game() {
   const [answer, setAnswer] = useState("FIVES");
@@ -14,6 +15,7 @@ function Game() {
   const [route, setRoute] = useState(window.location.pathname);
   const [popup, setPopup] = useState(false);
   const [gameStatus, setGameStatus] = useState();
+  const [isMobile, setIsMobile] = useState(false);
 
   //// General Functions
   const getWord = async () => {
@@ -115,6 +117,11 @@ function Game() {
   }
 
   useEffect(() => {
+    console.log(window);
+    setIsMobile(window.innerWidth <= 786);
+  }, [window.innerWidth]);
+
+  useEffect(() => {
     const routeName = window.location.pathname;
     setRoute(routeName);
 
@@ -136,7 +143,6 @@ function Game() {
     if (routeName === "/player-screen" && !popup && correctChars.length <= 6) {
       // Listens for user key input
       document.addEventListener("keypress", handleKeyPress, true);
-      console.log("here");
 
       // Removes event listener to prevent memory leak
       return () =>
@@ -165,6 +171,11 @@ function Game() {
         <br />
         <Word data={answer} correctChars={correctChars} />
         <br />
+        <Keypad
+          wrongChars={wrongChars}
+          correctChars={correctChars}
+          handleKeyPress={handleKeyPress}
+        />
         <WrongWordPool data={wrongChars} />
       </div>
 
