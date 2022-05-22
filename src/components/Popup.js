@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { checkWin } from "./Helper";
 
 function Popup(props) {
-  const { correctChars, wrongChars, answer, setPlayable, replay } = props; // Deconstructs props
+  const { correctChars, wrongChars, answer, replay } = props; // Deconstructs props
 
   let popUpMessage = "";
   let playable = true;
@@ -14,8 +14,6 @@ function Popup(props) {
     popUpMessage = `The word was: ${answer}`;
     playable = false;
   }
-
-  useEffect(() => setPlayable(playable));
 
   return (
     <div
