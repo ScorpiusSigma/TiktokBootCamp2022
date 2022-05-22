@@ -15,7 +15,6 @@ function Game() {
   const [route, setRoute] = useState(window.location.pathname);
   const [popup, setPopup] = useState(false);
   const [gameStatus, setGameStatus] = useState();
-  const [isMobile, setIsMobile] = useState(false);
 
   //// General Functions
   const getWord = async () => {
@@ -115,11 +114,6 @@ function Game() {
       return;
     }
   }
-
-  useEffect(() => {
-    console.log(window);
-    setIsMobile(window.innerWidth <= 786);
-  }, [window.innerWidth]);
 
   useEffect(() => {
     const routeName = window.location.pathname;
