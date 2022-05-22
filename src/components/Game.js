@@ -12,6 +12,8 @@ function Game() {
   const [wrongChars, setWrongChars] = useState([]);
   const [isInit, setIsInit] = useState(true);
   const [route, setRoute] = useState(window.location.pathname);
+  const [popup, setPopup] = useState(false);
+  const [gameStatus, setGameStatus] = useState();
 
   //// General Functions
   const getWord = async () => {
@@ -26,6 +28,8 @@ function Game() {
 
   const replay = async () => {
     clearChars();
+    setPopup(false);
+    setGameStatus();
     await getWord();
   };
 
@@ -41,10 +45,32 @@ function Game() {
 
   // Placeholder for word if the API is not working
   const placeHolders = () => {
-    const placeholders = ["FREAK", "SLEPT", "LOOSE", "DRIVE", "SOUTH"];
+    const placeholders = ["FREAK", "DRIVE", "SOUTH", "SLEPT", "LOOSE"];
     const len = placeholders.length;
     const index = Math.floor(Math.random() * len);
     return placeholders[index];
+  };
+
+  const checkGameStatus = () => {
+    if (wrongChars.length >= 6) {
+      setGameStatus(
+        <span>
+          The word was:{" "}
+          <span className="text-green-600 font-bold">{answer}</span>
+        </span>
+      );
+      setPopup(true);
+      return;
+    }
+
+    const isMatch =
+      answer.split("").sort().join("") === correctChars.sort().join("");
+
+    if (isMatch) {
+      setGameStatus(<span>Congratulations!</span>);
+      setPopup(true);
+      return;
+    }
   };
 
   //// Player Functions
@@ -98,6 +124,8 @@ function Game() {
       return;
     }
 
+    checkGameStatus();
+
     if (routeName !== route) {
       // When client changes page
       getWord();
@@ -105,20 +133,20 @@ function Game() {
       return;
     }
 
-    if (routeName === "/player-screen") {
+    if (routeName === "/player-screen" && !popup && correctChars.length <= 6) {
       // Listens for user key input
       document.addEventListener("keypress", handleKeyPress, true);
+      console.log("here");
 
-      return () => {
-        // Removes event listener to prevent memory leak
+      // Removes event listener to prevent memory leak
+      return () =>
         document.removeEventListener("keypress", handleKeyPress, true);
-      };
     }
 
     if (routeName === "/bot-screen") {
       if (wrongChars.length < 6) {
         const interval = setInterval(GenerateChar, 700);
-        // generate a random char every 700ms
+        // Generate a random char every 700ms
         return () => clearInterval(interval);
       }
     }
@@ -139,12 +167,8 @@ function Game() {
         <br />
         <WrongWordPool data={wrongChars} />
       </div>
-      <Popup
-        correctChars={correctChars}
-        wrongChars={wrongChars}
-        answer={answer}
-        replay={replay}
-      />
+
+      {popup && <Popup gameStatus={gameStatus} replay={replay} />}
     </div>
   );
 }

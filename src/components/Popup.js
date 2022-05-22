@@ -1,27 +1,12 @@
-import React, { useEffect } from "react";
-import { checkWin } from "./Helper";
+import React from "react";
 
 function Popup(props) {
-  const { correctChars, wrongChars, answer, replay } = props; // Deconstructs props
-
-  let popUpMessage = "";
-  let playable = true;
-
-  if (checkWin(correctChars, wrongChars, answer) === "win") {
-    popUpMessage = "Congratulations!";
-    playable = false;
-  } else if (checkWin(correctChars, wrongChars, answer) === "lose") {
-    popUpMessage = `The word was: ${answer}`;
-    playable = false;
-  }
+  const { replay, gameStatus } = props; // Deconstructs props
 
   return (
-    <div
-      className="bg-transparent fixed inset-x-0 top-20 bottom-10 hidden content-center justify-center h-max p-5"
-      style={popUpMessage !== "" ? { display: "flex" } : {}}
-    >
-      <div className="bg-zinc-50 rounded-lg text-center p-4">
-        <h2>{popUpMessage}</h2>
+    <div className="bg-[#32474c] bg-opacity-10 backdrop-blur-sm fixed content-center justify-center items-center flex w-full h-full ">
+      <div className="bg-zinc-50 rounded-lg text-center p-5 min-w-[256px] max-w-[256px] max-h-36">
+        <h2>{gameStatus}</h2>
         <br />
         <button
           onClick={replay}
