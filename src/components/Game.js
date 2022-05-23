@@ -72,7 +72,12 @@ function Game() {
       toCompareWithCorrectChar.sort().join("") === correctChars.sort().join("");
 
     if (isMatch) {
-      setGameStatus(<span>Congratulations!</span>);
+      setGameStatus(
+        <span>
+          Congratulations! The word is{" "}
+          <span className="text-green-600 font-bold">{answer}</span>
+        </span>
+      );
       setPopup(true);
       return;
     }
