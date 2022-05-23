@@ -19,7 +19,7 @@ export default function Keypad(props) {
   };
 
   return (
-    <div className="flex flex-col gap-2 p-4 justify-center w-full">
+    <div className="flex flex-col gap-2 p-4 justify-center w-full max-w-4xl">
       <div>type or click below to play</div>
       <div className="flex flex-row flex-wrap justify-center">
         {alphabets.map((alphabet, index) => (
