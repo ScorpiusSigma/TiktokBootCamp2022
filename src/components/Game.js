@@ -53,6 +53,10 @@ function Game() {
   };
 
   const checkGameStatus = () => {
+    const removeDuplicates = (array) => {
+      return array.filter((item, index) => array.indexOf(item) === index);
+    };
+
     if (wrongChars.length >= 6) {
       setGameStatus(
         <span>
@@ -64,8 +68,9 @@ function Game() {
       return;
     }
 
+    const toCompareWithCorrectChar = removeDuplicates(answer.split(""));
     const isMatch =
-      answer.split("").sort().join("") === correctChars.sort().join("");
+      toCompareWithCorrectChar.sort().join("") === correctChars.sort().join("");
 
     if (isMatch) {
       setGameStatus(<span>Congratulations!</span>);
@@ -116,6 +121,10 @@ function Game() {
   }
 
   useEffect(() => {
+    checkGameStatus();
+  }, [wrongChars.length, correctChars.length]);
+
+  useEffect(() => {
     const routeName = window.location.pathname;
     setRoute(routeName);
     if (isInit) {
@@ -123,8 +132,6 @@ function Game() {
       setIsInit(false);
       return;
     }
-
-    checkGameStatus();
 
     if (routeName !== route) {
       // When client changes page
@@ -134,8 +141,6 @@ function Game() {
     }
 
     if (routeName === "/player-screen" && !popup && correctChars.length <= 6) {
-      console.log(answer);
-
       // Listens for user key input
       document.addEventListener("keypress", handleKeyPress, true);
 
