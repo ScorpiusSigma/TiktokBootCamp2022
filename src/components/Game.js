@@ -3,7 +3,6 @@ import "../App.css";
 import Figure from "./Figure";
 import Popup from "./Popup";
 import Word from "./Word";
-import WrongWordPool from "./WrongWordPool";
 import Navigation from "./Navigation";
 import Keypad from "./Keypad";
 
@@ -176,7 +175,6 @@ function Game() {
           correctChars={correctChars}
           handleKeyPress={handleKeyPress}
         />
-        <WrongWordPool data={wrongChars} />
       </div>
 
       {popup && <Popup gameStatus={gameStatus} replay={replay} />}

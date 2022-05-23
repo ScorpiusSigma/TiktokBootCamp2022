@@ -19,19 +19,22 @@ export default function Keypad(props) {
   };
 
   return (
-    <div className="grid lg:hidden grid-cols-6 md:grid-cols-9 md:grid-rows-4 p-4 md:gap-1">
-      {alphabets.map((alphabet, index) => (
-        <button
-          key={index}
-          className={buttonStyle(alphabet)}
-          onClick={(e) => {
-            e.key = alphabet;
-            handleKeyPress(e);
-          }}
-        >
-          {alphabet}
-        </button>
-      ))}
+    <div className="flex flex-col gap-2 p-4 justify-center w-full">
+      <div>type or click below to play</div>
+      <div className="flex flex-row flex-wrap justify-center">
+        {alphabets.map((alphabet, index) => (
+          <button
+            key={index}
+            className={buttonStyle(alphabet)}
+            onClick={(e) => {
+              e.key = alphabet;
+              handleKeyPress(e);
+            }}
+          >
+            {alphabet}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
