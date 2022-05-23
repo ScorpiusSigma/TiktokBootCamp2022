@@ -19,7 +19,7 @@ export default function Keypad(props) {
   };
 
   return (
-    <div className="grid md:hidden grid-cols-6 md:grid-cols-9 md:grid-rows-4 p-4 md:gap-1">
+    <div className="grid lg:hidden grid-cols-6 md:grid-cols-9 md:grid-rows-4 p-4 md:gap-1">
       {alphabets.map((alphabet, index) => (
         <button
           key={index}
