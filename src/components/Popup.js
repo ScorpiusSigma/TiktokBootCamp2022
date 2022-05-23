@@ -1,10 +1,17 @@
 import React from "react";
+import Confetti from "react-confetti";
 
 function Popup(props) {
   const { replay, gameStatus } = props; // Deconstructs props
+  const isConfetti = gameStatus.props.children === "Congratulations!";
 
   return (
-    <div className="bg-[#32474c] bg-opacity-10 backdrop-blur-sm fixed content-center justify-center items-center flex w-full h-full ">
+    <div className="bg-[#32474c] bg-opacity-10 backdrop-blur-sm fixed content-center justify-center items-center flex w-full h-full">
+      {isConfetti ? (
+        <Confetti width={window.innerWidth} height={window.innerHeight} />
+      ) : (
+        <div />
+      )}
       <div className="bg-zinc-50 rounded-lg text-center p-5 min-w-[256px] max-w-[256px] max-h-36">
         <h2>{gameStatus}</h2>
         <br />

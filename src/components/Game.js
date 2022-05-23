@@ -19,7 +19,7 @@ function Game() {
   //// General Functions
   const getWord = async () => {
     const data = await fetch(
-      "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=5&api_key=717e742378f817fc18008050c3603815d23932c959efecfe0"
+      "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun&maxCorpusCount=-1&minDictionaryCount=5&maxDictionaryCount=-1&minLength=5&maxLength=5&api_key=717e742378f817fc18008050c3603815d23932c959efecfe0"
     ).then((res) => res.json());
 
     const newWord = data.word?.toUpperCase() || placeHolders();
@@ -118,7 +118,6 @@ function Game() {
   useEffect(() => {
     const routeName = window.location.pathname;
     setRoute(routeName);
-
     if (isInit) {
       getWord();
       setIsInit(false);
@@ -135,6 +134,8 @@ function Game() {
     }
 
     if (routeName === "/player-screen" && !popup && correctChars.length <= 6) {
+      console.log(answer);
+
       // Listens for user key input
       document.addEventListener("keypress", handleKeyPress, true);
 
