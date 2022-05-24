@@ -5,13 +5,13 @@
     <h1 style="font-weight: bold">TikTok Web Development Bootcamp</h1>
       <div>
         <h2>Desktop</h2>
-        <img src="./ss/png" alt="Logo" style="width: 25%" />
-        <img src="./ss2/2.png" alt="Logo" style="width: 25%" />
+        <img src="ss/png" alt="Logo" style="width: 25%" />
+        <img src="ss2/2.png" alt="Logo" style="width: 25%" />
       </div>
       <div>
         <h2>Mobile (iPhone XR)</h2>
-        <img src="./ssmobile.png" alt="Logo" style="width: 25%" />
-        <img src="./ssmobile2.png" alt="Logo" style="width: 25%" />
+        <img src="ssmobile.png" alt="Logo" style="width: 25%" />
+        <img src="ssmobile2.png" alt="Logo" style="width: 25%" />
       </div>
     <br />
     <br />
@@ -59,7 +59,7 @@ This is an React web application is a hangman game fetches data from <a href="ht
 
 This is an example of how you can set up your project locally. To get a local copy up and running follow these simple example steps.
 
-1. Clone the repo
+1. Clone the repo with any
 
 ```sh
 git clone with HTTPS          https://github.com/ScorpiusSigma/TiktokBootCamp2022.git
