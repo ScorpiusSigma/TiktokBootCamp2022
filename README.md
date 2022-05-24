@@ -1,72 +1,76 @@
-# TiktokBootCamp2022
+<!-- PROJECT LOGO -->
+<br />
+<div>
+  <div align="center">
+    <h1 style="font-weight: bold">TikTok Web Development Bootcamp</h1>
+      <div>
+        <h2>Desktop</h2>
+        <img src="./ss/png" alt="Logo" style="width: 25%" />
+        <img src="./ss2/2.png" alt="Logo" style="width: 25%" />
+      </div>
+      <div>
+        <h2>Mobile (iPhone XR)</h2>
+        <img src="./ssmobile.png" alt="Logo" style="width: 25%" />
+        <img src="./ssmobile2.png" alt="Logo" style="width: 25%" />
+      </div>
+    <br />
+    <br />
+    <p align="center">
+        This is an React web application is a hangman game fetches data from <a href="https://wordnik.com/">wordnik</a>, allowing a randomised word pool every round. There is also a feature where you can allow a bot to play for you. This application is responsive and fits any device screens.
+        <br />
+        <a href="https://github.com/ScorpiusSigma/TiktokBootCamp2022/issues">Report Bugs</a>
+        ·
+        <a href="https://github.com/ScorpiusSigma/TiktokBootCamp2022/issues">Request Feature</a>
+    </p>
 
-# Getting Started with Create React App
+  </div>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- TABLE OF CONTENTS -->
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+- [Built-with](#built-with)
+- [Getting Started](#getting-started)
 
-### `npm start`
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+This is an React web application is a hangman game fetches data from <a href="https://wordnik.com/">wordnik</a>, allowing a randomised word pool every round. There is also a feature where you can allow a bot to play for you. This application is responsive and fits any device screens.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br />
 
-### `npm run build`
+## Built-with
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React](https://reactjs.org/)
+- [tailwindcss](https://tailwindcss.com/)
+- [axios](https://axios-http.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- GETTING STARTED -->
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This is an example of how you can set up your project locally. To get a local copy up and running follow these simple example steps.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```sh
+git clone with HTTPS          https://github.com/ScorpiusSigma/TiktokBootCamp2022.git
+git clone with SSH            git@github.com:ScorpiusSigma/TiktokBootCamp2022.git
+git clone with Github CLI     gh repo clone ScorpiusSigma/TiktokBootCamp2022
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Development
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+1. Open the project in your preferred editor
+2. npm install
+3. npm start
+```
