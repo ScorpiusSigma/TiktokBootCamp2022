@@ -5,13 +5,13 @@
     <h1 style="font-weight: bold">TikTok Web Development Bootcamp</h1>
       <div>
         <h2>Desktop</h2>
-        <img src="ss/png" alt="Logo" style="width: 25%" />
-        <img src="ss2/2.png" alt="Logo" style="width: 25%" />
+        <img src="./public/ss/png" alt="Logo" style="width: 25%" />
+        <img src="./public/ss2/2.png" alt="Logo" style="width: 25%" />
       </div>
       <div>
         <h2>Mobile (iPhone XR)</h2>
-        <img src="ssmobile.png" alt="Logo" style="width: 25%" />
-        <img src="ssmobile2.png" alt="Logo" style="width: 25%" />
+        <img src="./public/ssmobile.png" alt="Logo" style="width: 25%" />
+        <img src="./public/ssmobile2.png" alt="Logo" style="width: 25%" />
       </div>
     <br />
     <br />
