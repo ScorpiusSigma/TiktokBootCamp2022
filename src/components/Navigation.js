@@ -17,6 +17,12 @@ function Navigation() {
           <li>
             <Link to="/bot-screen">Bot</Link>
           </li>
+          <a
+            href="https://github.com/ScorpiusSigma/TiktokBootCamp2022"
+            target="_blank"
+          >
+            Github
+          </a>
         </ul>
       </div>
     </nav>
